@@ -1,5 +1,4 @@
 -- Create the table second_table if it doesn't exist
-USE hbtn_0c_0;
 CREATE TABLE IF NOT EXISTS second_table (
     id INT,
     name VARCHAR(256),
