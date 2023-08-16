@@ -13,12 +13,7 @@ SELECT
                 IF(EXTRA = 'auto_increment', ' AUTO_INCREMENT', '')
             ) SEPARATOR ', '
         ), 
-        ', PRIMARY KEY (`id`)) ENGINE=', 
-        ENGINE, 
-        ' DEFAULT CHARSET=', 
-        CHARACTER_SET_NAME, 
-        ' COLLATE=', 
-        COLLATION_NAME
+        ', PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci'
     ) AS create_table_statement
 FROM (
     SELECT 
@@ -27,10 +22,7 @@ FROM (
         COLUMN_TYPE, 
         IS_NULLABLE, 
         COLUMN_DEFAULT, 
-        EXTRA,
-        ENGINE,
-        CHARACTER_SET_NAME,
-        COLLATION_NAME
+        EXTRA
     FROM INFORMATION_SCHEMA.COLUMNS
     WHERE TABLE_SCHEMA = 'hbtn_0c_0' AND TABLE_NAME = 'first_table'
 ) AS tbl_info;
